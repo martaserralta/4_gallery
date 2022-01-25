@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El mundo animal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 32px;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        a{
+            text-decoration: none;
+            font-family: 'Assistant', sans-serif; 
+            text-transform: uppercase;
+            color: var(--verde);
+            margin: 20px;
+        }
+        :root {
+            --verde: #6C733D;
+            --gris: #8C8C88;
+            --grisoscuro: #202426; 
+            --verdeclaro: #9DA65D; 
+            --playfair: 'Playfair Display', serif;
+            --assistant: 'Assistant', sans-serif;
+        }
+        .container{
+            padding:0 2em;
+        }
+        /*Aquí va todo lo del header*/
+        body>header{
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            background-color: var(--verdeclaro);
+        }
+        h1{
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700;
+            color: var (--grisoscuro);
+            font-size: 2em;
+        }
+        h2{
+            font-family: 'Assistant', sans-serif;
+            font-weight: 400;
+            color: var (var(--grisoscuro));
+            font-size: 1.2em;
+        }
+        h3{
+            font-family: var(--assistant);
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1em;
+        }
+        nav a{
+            font-size: 0.75em;
+        }
+        /*Aquí va todo lo del main*/
+        /*Tipos de animales*/
+        #tipos_animales{
+            background-color: beige;
+        }
+        section:first-child .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        section:first-child h2{
+            color: black;
+            text-align: center;
+            font-family: var(--playfair);
+        }
+        .card_tipos{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            margin: 0.75em;
+            align-items: center;
+            width: 300px;
+            padding: 0.25em;
+        }
+        .tipos_img{
+            width: 250px;
+            height: 250px;
+        }
+        .tipos_img img{
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 250px;
+            box-shadow: black 0px 0px 20px;
+        }
+        .card_tipos header{
+            text-align: center;
+            margin-top: 0.75em;
+        }
+        .card_tipos header h3{
+            color: var(--grisoscuro);
+        }
+        .card_tipos header blockquote{
+            font-family: var(--playfair);
+            font-size: 0.5em;
+        }
+        /*Aquí va section animales*/
+        #animales{
+            padding: 1.75em;
+        }
+        #animales .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        section:last-child{
+            height: 100%;
+            background-color: var(--verdeclaro);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        section:last-child h2{
+            color: black;
+            text-align: center;
+            font-family: var(--playfair);
+        }
+        .animal{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-grow: 1;
+            max-width: 800px;
+            min-width: 250px;
+            min-height: 350px;
+            padding: 0.5em;
+            margin: 0.3em;
+            background-color: white;
+        }
+        .animal_img{
+            display: flex;
+            width: 100%;
+            height: 250px;
+        }
+        .animal .animal_img img{
+            object-fit: cover;
+            flex-grow: 1;
+            object-position: center;
+        }
+        .animal header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-grow: 1;
+        }
+        .animal h3{
+            font-size: 1em;
+            font-family: var(--playfair);
+        }
+        /*Aquí va todo lo del footer*/
+        footer{
+            height: 25vh;
+            padding: 2em;
+        }
+        footer h3{
+            font-weight: 100;
+            font-size: 1em;
+            text-align: left;
+        }
+        footer .container{
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 0.75em;
+        }
+        footer p{
+            width: 17%;
+        }
+        footer p:last-child{
+            width: 50%;
+            text-align: right;
+        }
+        footer p a{
+            font-size: 00.5em;
+            text-transform: capitalize;
+            font-family: var(--playfair);
+        }
+        @media (max-width:550px){
+            html{
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container"> 
+        <hgroup>
+            <h1>El mundo animal</h1>
+            <h2>Colección gráfica de animales salvajes domésticos y marítimos</h2>
+        </hgroup>
+        <nav>
+            <a href="#tipos_animales">categorias</a>
+            <a href="#animales">animales</a>
+            <a href="#rrss">redes</a>
+        </nav>
+        </div>
+    </header>
+    <main>
+        <section id="tipos_animales">
+            <h2>Tipos de animales</h2>
+            <div class="container">
+                <div class="card_tipos">
+                    <div class="tipos_img">
+                        <img src="img/tipos_animales/dom1.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Domésticos</h3>
+                        <blockquote>
+                            Los más cariñosos
+                        </blockquote>
+                    </header>
+                </div>
+                <div class="card_tipos">
+                    <div class="tipos_img">
+                        <img src="img/tipos_animales/salv1.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Salvajes</h3>
+                        <blockquote>
+                            los menos cariñosos
+                        </blockquote>
+                    </header>
+                </div>
+                <div class="card_tipos">
+                    <div class="tipos_img">
+                        <img src="img/tipos_animales/mar1.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Marinos</h3>
+                        <blockquote>
+                            Los más desconocidos
+                        </blockquote>
+                    </header>
+                </div>
+            </div>
+        </section>
+        <section id="animales">
+            <h2>Animales</h2>
+            <div class="container">
+                <div class="animal">
+                    <div class="animal_img">
+                        <img src="img/animales/dom2.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Gato</h3>
+                    </header>
+                </div>
+                <div class="animal">
+                    <div class="animal_img">
+                        <img src="img/animales/dom3.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Conejo</h3>
+                    </header>
+                </div>
+                <div class="animal">
+                    <div class="animal_img">
+                        <img src="img/tipos_animales/dom1.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Perro</h3>
+                    </header>
+                </div>
+                <div class="animal">
+                    <div class="animal_img">
+                        <img src="img/animales/salv2.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Tigre</h3>
+                    </header>
+                </div>
+                <div class="animal">
+                    <div class="animal_img">
+                        <img src="img/animales/salv3.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Elefante</h3>
+                    </header>
+                </div>
+                <div class="animal">
+                    <div class="animal_img">
+                        <img src="img/animales/salv4.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Lemur</h3>
+                    </header>
+                </div>
+                <div class="animal">
+                    <div class="animal_img">
+                        <img src="img/animales/Smiling-dolphin-1.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Delfín</h3>
+                    </header>
+                </div>
+                <div class="animal">
+                    <div class="animal_img">
+                        <img src="img/tipos_animales/mar1.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Tortuga</h3>
+                    </header>
+                </div>
+                <div class="animal">
+                    <div class="animal_img">
+                        <img src="img/animales/mar3.jpg" alt="">
+                    </div>
+                    <header>
+                        <h3>Pulpo</h3>
+                    </header>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="rrss">
+        <h3>redes</h3>
+        <div class="container">
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">Facebook</a></p>
+            <p><a href="#">Twitter</a></p>
+            <p><a href="#">E-mail</a></p>
+        </div>
+    </footer>
+</body>
+</html>
